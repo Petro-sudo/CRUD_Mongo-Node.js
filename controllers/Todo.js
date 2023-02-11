@@ -1,3 +1,4 @@
+const Todo = require("../model/Todo");
 const getTodos = (req, res) => {
   Todo.find((err, todos) => {
     if (err) {
@@ -20,7 +21,6 @@ const getTodos = (req, res) => {
       res.json(todo);
     });
   };
-  const Todo = require("../model/Todo");
 
   const updateTodo = (req, res) => {
     Todo.findOneAndUpdate(
