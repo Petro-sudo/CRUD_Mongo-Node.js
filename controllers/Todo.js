@@ -1,7 +1,11 @@
 const getTodos = (req, res) => {
-    res.send("I am the get todos route");
-  };
-  
+  Todo.find((err, todos) => {
+    if (err) {
+      res.send(err);
+    }
+    res.json(todos);
+  });
+};
   const createTodo = (req, res) => {
     const todo = new Todo({
       title: req.body.title,
